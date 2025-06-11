@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>作品 1</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html, body {
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      font-family: 'Courier New', monospace;
+    }
+
+    /* 背景模糊圖層 */
+    .background {
+      background-image: url('bg5.jpg'); /* 你的背景圖 */
+      background-size: cover;
+      background-position: center;
+      filter: blur(0px); /* ✅ 模糊程度 */
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      z-index: 0;
+    }
+
+    /* 遮罩層：蓋在模糊圖上避免內容也模糊 */
+    .overlay {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      z-index: 1;
+    }
+
+    /* 左上角返回按鈕 */
+    .back-button {
+      position: absolute;
+      top: 30px;
+      left: 20px;
+      background-color: rgba(255, 255, 255, 0.8);
+      padding: 10px 16px;
+      border-radius: 8px;
+      text-decoration: none;
+      color: black;
+      font-weight: bold;
+      transition: background-color 0.3s;
+      z-index: 10;
+    }
+    .back-button:hover {
+      background-color: #ffcc00;
+    }
+
+    /* 右上角下一題按鈕 */
+    .next-button {
+      position: absolute;
+      top: 30px;
+      right: 20px;
+      background-color: rgba(0, 0, 0, 0.6);
+      padding: 10px 16px;
+      border-radius: 8px;
+      text-decoration: none;
+      color: white;
+      font-weight: bold;
+      transition: background-color 0.3s;
+      z-index: 10;
+    }
+    .next-button:hover {
+      background-color: #00a148;
+    }
+
+    
+    /* 中央浮動 PNG */
+    .center-image {
+      position: absolute;
+      top: 55%;
+      left: 35%;
+      transform: translate(-50%, -50%);
+      width: 1600px;
+      height: auto;
+      animation: float 3s ease-in-out infinite;
+      z-index: 5;
+    }
+
+    /* 浮動動畫 */
+    @keyframes float {
+      0% { transform: translate(-50%, -50%) translateY(0); }
+      50% { transform: translate(-50%, -50%) translateY(-20px); }
+      100% { transform: translate(-50%, -50%) translateY(0); }
+    }
+
+    /* 右側淡入 PNG */
+    .side-image {
+      position: absolute;
+      bottom: 15%;
+      right: 20%;
+      width: 400px;
+      height: auto;
+      opacity: 0;
+      animation: fadeIn 2s ease forwards;
+      animation-delay: 1s;
+      z-index: 5;
+    }
+
+    @keyframes fadeIn {
+      from {
+        transform: translateX(50px);
+        opacity: 0;
+      }
+      to {
+        transform: translateX(0);
+        opacity: 1;
+      }
+      
+    }
+    
+  </style>
+</head>
+<body>
+  <!-- 模糊背景圖 -->
+  <div class="background"></div>
+
+  <!-- 遮罩層 -->
+  <div class="overlay">
+    <!-- 左上：回首頁 -->
+    <a href="index.html" class="back-button">← Back</a>
+
+    <!-- 右上：下一題 -->
+    <a href="page4.html" class="next-button">Continue Journey →</a>
+
+    <!-- 中央浮動透明 PNG -->
+    <img src="Animated.png" alt="作品主圖" class="center-image" />
+
+    <!-- 右方淡入 PNG -->
+    <img src="side-element.png" alt="右方圖片" class="side-image" />
+  </div>
+
+</body>
+</html>

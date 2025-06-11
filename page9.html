@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Page 2</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-image: url('evil5.jpg'); /* 換成你的背景圖 */
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+    }
+
+     .back-button {
+      position: absolute;
+      top: 30px;
+      left: 20px;
+      background-color: rgba(255, 255, 255, 0.8);
+      padding: 10px 16px;
+      border-radius: 8px;
+      text-decoration: none;
+      color: black;
+      font-family: 'Courier New', monospace;
+      font-weight: bold;
+      transition: background-color 0.3s;
+      z-index: 10;
+    }
+    .back-button:hover {
+      background-color: #ffcc00;
+    }
+    
+    .message {
+      font-size: 36px;
+      color: rgb(255, 77, 0);
+      font-family: 'Courier New', monospace;
+      text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+      animation: bounceIn 1s ease-out forwards;
+      opacity: 0;
+      position: absolute;
+       top: 80%;
+       left: 18%;
+       transform: translate(-50%, -50%);
+       text-align: center;
+    }
+
+    @keyframes bounceIn {
+  0%   { transform: scale(0.5); opacity: 0; }
+  60%  { transform: scale(1.2); opacity: 1; }
+  100% { transform: scale(1);   opacity: 1; }
+}
+
+
+
+
+
+  </style>
+</head>
+<body>
+    <a href="page4.html" class="back-button">← Back</a>
+  <div class="message">
+    <span class="line1">"Where is AI KING KONG!!?" yelled the AI Godzilla</span><br />
+    <span class="line2">p.s. You die if you don't have the answer :(  </span>
+  </div>
+</body>
+</html>
